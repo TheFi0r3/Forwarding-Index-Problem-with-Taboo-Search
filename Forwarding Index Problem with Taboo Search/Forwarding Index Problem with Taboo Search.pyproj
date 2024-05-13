@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>9d5e7a8c-092b-41fb-a199-dc17d6fdf2c5</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>First Draft.py</StartupFile>
+    <StartupFile>Forwarding_Index_Problem_with_Taboo_Search.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -27,6 +27,9 @@
     <Compile Include="module2.py" />
     <Compile Include="First Draft.backup.py" />
     <Compile Include="First Draft.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="graph_data.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
