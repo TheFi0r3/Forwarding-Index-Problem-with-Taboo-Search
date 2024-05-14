@@ -4,7 +4,9 @@ def generate_wheel_graph(num_nodes):
     return nx.wheel_graph(num_nodes)
 
 def generate_hypercube_graph(dimension):
-    return nx.hypercube_graph(dimension)
+    G = nx.hypercube_graph(dimension)
+    mapping = {node: i for i, node in enumerate(G.nodes())}
+    return nx.relabel_nodes(G, mapping)
 
 def generate_de_bruijn_graph(n, k):
     return nx.de_bruijn_graph(n, k)
