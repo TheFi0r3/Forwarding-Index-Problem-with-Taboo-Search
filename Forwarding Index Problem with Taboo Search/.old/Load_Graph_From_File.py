@@ -21,7 +21,7 @@ def load_graph_from_file(file_path):
     return graph
 
 # Example usage
-file_path = 'file.txt'  # Replace 'graph.txt' with the path to your text file
+file_path = 'graph.in'  # Replace 'graph.txt' with the path to your text file
 loaded_graph = load_graph_from_file(file_path)
 for row in loaded_graph:
     print(row)

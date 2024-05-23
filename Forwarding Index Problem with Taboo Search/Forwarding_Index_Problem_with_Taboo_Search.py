@@ -147,7 +147,7 @@ def count_edges_crossed_by_paths(graph, all_pairs_paths):
     #print(edge_cross_count_list)
 
     max_edge_cross_count = calculate_max_edge_cross_count(edge_cross_count_list)
-    print("Max edge cross count:", max_edge_cross_count)
+    print("Indice de Transmision del Grafo:", max_edge_cross_count)
         
 def get_edge_cross_count_list(edge_count_matrix):
     edge_cross_count_list = []
@@ -166,7 +166,7 @@ def calculate_max_edge_cross_count(edge_cross_count_list):
 
 if __name__ == "__main__":
  
-    file_path = "graph_data.txt"
+    file_path = "graph.in"
     try:
         start_time = time.time()
         
