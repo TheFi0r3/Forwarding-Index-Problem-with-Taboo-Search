@@ -31,7 +31,7 @@ def load_graph_from_file(file_path):
                 # Read max_iterations and tabu_size from the first line
                 first_line_values = lines[0].strip().split()
                 if len(first_line_values) != 2:
-                    raise ValueError("Error: Number of iterations and tabu size not set up in the file.")
+                    raise ValueError("Error: Numero de iteraciones y tabu no configurados en el archivo.")
                 max_iterations, tabu_size = map(int, first_line_values)
 
                 # Read graph data from subsequent lines
@@ -45,9 +45,9 @@ def load_graph_from_file(file_path):
                                 if node2 not in graph.graph_dict.get(node1, []):
                                     graph.add_edge(node1, node2)
                         else:
-                            raise ValueError(f"Error in line {line_num}: Each line should contain at least two nodes.")
+                            raise ValueError(f"Error en la linea {line_num}: Cada linea debe contener al menos dos nodos.")
     except FileNotFoundError:
-        raise FileNotFoundError(f"Error: File '{file_path}' not found.")
+        raise FileNotFoundError(f"Error: No se encontro el archivo '{file_path}'.")
     except ValueError as e:
         raise ValueError(str(e))
 
@@ -110,7 +110,7 @@ def tabu_search(graph, start, goal, max_iterations, tabu_size):
 def print_graph_as_array(graph):
 
     nodes = sorted(list(graph.graph_dict.keys()))
-    print("Shortest paths between all pairs of nodes:")
+    print("Caminos mas cortos entre todos los pares de nodos:")
     print("   " + "   ".join(nodes))
     for start_node in nodes:
         row = start_node + " "
@@ -134,7 +134,7 @@ def count_edges_crossed_by_paths(graph, all_pairs_paths):
                     edge_count_matrix[nodes.index(node1)][nodes.index(node2)] += 1
                     edge_count_matrix[nodes.index(node2)][nodes.index(node1)] += 1  # Add reverse edge count
 
-    #print("Graph as a 2D array (edge count matrix):")
+    #print("Grafo como  matriz 2D (matriz de recuento de aristas):")
     #print("    " + "  ".join(nodes))
     #for i in range(num_nodes):
     #    row = nodes[i] + "   "
@@ -143,7 +143,7 @@ def count_edges_crossed_by_paths(graph, all_pairs_paths):
     #    print(row)
         
     edge_cross_count_list = get_edge_cross_count_list(edge_count_matrix)
-    #print("Number of times each edge is crossed:")
+    #print("Numero de veces que se cruza cada borde:")
     #print(edge_cross_count_list)
 
     max_edge_cross_count = calculate_max_edge_cross_count(edge_cross_count_list)
@@ -171,7 +171,7 @@ if __name__ == "__main__":
         start_time = time.time()
         
         graph, max_iterations, tabu_size = load_graph_from_file(file_path)
-        #print("Graph loaded from file:")
+        #print("Grafo cargado desde archivo:")
         #print(graph.graph_dict)
 
         all_pairs_paths = tabu_search_all_pairs(graph, max_iterations, tabu_size)
@@ -184,4 +184,4 @@ if __name__ == "__main__":
     finally:
         end_time = time.time()  # Stop measuring execution time
         execution_time = end_time - start_time
-        print("Execution time:", execution_time, "seconds")
+        print("Tiempo de Ejecucion:", execution_time, "seconds")
